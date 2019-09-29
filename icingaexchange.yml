@@ -1,0 +1,17 @@
+name: check_arch_updates
+description: "file:///README.md"
+url: "https://github.com/bodsch/check_arch_updates.git"
+tags: ArchLinux OperatingSystem
+vendor: Linux
+target: Operating System
+type: Plugin
+license: gplv3
+releases:
+  -
+    name: 1.0
+    description: "1.0 Release"
+    files:
+      -
+        name: check_arch_updates
+        url: "file:///check_arch_updates"
+        description: "First release"
