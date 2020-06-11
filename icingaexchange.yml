@@ -8,10 +8,10 @@ type: Plugin
 license: gplv3
 releases:
   -
-    name: 1.0
-    description: "1.0 Release"
+    name: 1.1.1
+    description: "1.1.1 Bug Fix"
     files:
       -
         name: check_arch_updates
         url: "file:///check_arch_updates"
-        description: "First release"
+        description: "Fix order of WARNING and CRITICAL"
