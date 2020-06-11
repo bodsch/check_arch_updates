@@ -6,8 +6,8 @@ E_WARNING=1
 E_CRITICAL=2
 E_UNKNOWN=3
 
-warn=5
-crit=10
+warn=8
+crit=15
 
 if [[ -e /etc/os-release ]]
 then
@@ -29,20 +29,18 @@ then
     count=$(echo "${list}" | wc -l)
   fi
 
-  if [[ "${count}" -eq 0 ]]
-  then
-    exit_code="${E_OK}"
-    exit_msg="OK "
-
-  elif [[ "${count}" -gt "${warn}" ]] && [[ "${count}" -lt "${crit}"  ]]
+  if [[ "${count}" -gt "${warn}" ]] && [[ "${count}" -lt "${crit}"  ]]
   then
     exit_code="${E_WARNING}"
     exit_msg="WARNING "
-  else
+  elif [[ "${count}" -gt "${crit}"  ]]
+  then
     exit_code="${E_CRITICAL}"
     exit_msg="CRITICAL "
+  else
+    exit_code="${E_OK}"
+    exit_msg="OK "
   fi
-
 
   echo -e "${exit_msg} ${count} packages available for upgrade\n"
 
@@ -58,4 +56,3 @@ else
 fi
 
 exit ${exit_code}
-
