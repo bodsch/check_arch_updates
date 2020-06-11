@@ -21,15 +21,14 @@ then
   PACMAN=$(command -v pacman)
 
   list=$(${PACMAN} --sync --sysupgrade --print 2> /dev/null)
+  count=0
 
-  if [ "${list}" == "" ]
+  if [ ! -z "${list}" ]
   then
-    count=0
-  else
     count=$(echo "${list}" | wc -l)
   fi
 
-  if [[ "${count}" -gt "${warn}" ]] && [[ "${count}" -lt "${crit}"  ]]
+  if [[ "${count}" -gt 0 ]] && [[ "${count}" -lt "${warn}"  ]]
   then
     exit_code="${E_WARNING}"
     exit_msg="WARNING "
