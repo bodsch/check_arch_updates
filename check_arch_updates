@@ -15,7 +15,7 @@ then
   distribution="${ID}"
 fi
 
-if [[ "${distribution}" == "arch" ]]
+if [ "${distribution}" = "arch" ] || [ "${distribution}" = "artix" ]
 then
 
   PACMAN=$(command -v pacman)

@@ -1,6 +1,7 @@
 # check_arch_updates
 
-Similar to check_apt for debian, a small script that shows the number of open updates for an ArchLinux.
+Similar to `check_apt` for debian, a small script that shows the number of open updates for an [ArchLinux](https://www.archlinux.de/)
+or [Artix Linux](https://artixlinux.org/).
 
 ## usage
 
@@ -22,3 +23,4 @@ CRITICAL  13 packages available for upgrade
   systemd-sysvcompat-243.51-1-x86_64.pkg.tar.xz
   unrar-1:5.8.2-1-x86_64.pkg.tar.xz
 ```
+
